@@ -1,10 +1,11 @@
 /*
  * File: CH9.6.1.c
- * Project: Einführung in C
+ * Project: Einführung in C - Schrader
  * Created Date: 2022-01-25, 2:41:19 am
  * Author: Hamzenis Kryeziu
+ * E-Mail: hamzenis.kryeziu@stud.fra-uas.de
  * -----
- * Last Modified: 2022-01-27, 1:15:57 am
+ * Last Modified: 2022-02-20, 7:10:40 pm
  * Modified By: Hamzenis Kryeziu
  * -----
  * Copyright (c) 2022
@@ -14,8 +15,7 @@
  * HISTORY:
  * Date              		By		Comments
  * ------------------		----	----------------------------------------------------------
- * 2022-01-27, 1:15:29 am	H.K.	-end V1.0-
- * 2022-01-25, 2:41:19 am	H.K.	-start-
+ * 2022-02-20, 7:10:20 pm	H.K.	-start-
  */
 
 #include <stdio.h>

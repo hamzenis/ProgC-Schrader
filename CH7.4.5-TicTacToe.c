@@ -5,11 +5,11 @@
  * Author: Hamzenis Kryeziu
  * E-Mail: hamzenis.kryeziu@stud.fra-uas.de
  * -----
- * Last Modified: 2022-02-20, 7:00:30 pm
+ * Last Modified: 2022-02-20, 7:34:53 pm
  * Modified By: Hamzenis Kryeziu
  * -----
- * Copyright (c) 2022 
- * 
+ * Copyright (c) 2022
+ *
  * Free for use
  * -----
  * HISTORY:
@@ -21,9 +21,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// define clearscreen for windows and unix systems
-// enable the corresponding definition for unix or windows
-// #define UNIX  1
+ // define clearscreen for windows and unix systems
+ // enable the corresponding definition for unix or windows
+ // #define UNIX  1
 
 #define WINDOWS 1
 
@@ -103,6 +103,7 @@ void displayBoard() {
 int verifySelection(int iSquare, int iPlayer) {
     int row;
     int collum;
+    
     /*
     * Switch Case für die Eingabe des Nutzers.
     * Die jeweilige Eingabe wird in row & collum übersetzt.

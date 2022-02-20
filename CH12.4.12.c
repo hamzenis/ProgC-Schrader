@@ -1,22 +1,24 @@
 /*
  * File: CH12.4.12.c
- * Project: Einführung in C
+ * Project: Einführung in C - Schrader
  * Created Date: 2022-01-25, 4:21:31 pm
  * Author: Hamzenis Kryeziu
+ * E-Mail: hamzenis.kryeziu@stud.fra-uas.de
  * -----
- * Last Modified: 2022-01-25, 6:44:14 pm
+ * Last Modified: 2022-02-20, 7:39:32 pm
  * Modified By: Hamzenis Kryeziu
  * -----
- * Copyright (c) 2022
- *
+ * Copyright (c) 2022 
+ * 
  * Free for use
  * -----
  * HISTORY:
  * Date              		By		Comments
  * ------------------		----	----------------------------------------------------------
- * 2022-01-25, 4:41:20 pm	H.K.	-start-
+ * 2022-01-25, 4:21:31 pm	H.K.	-start-
  */
 
+//Problem mit Zeilenumbruch. Muss noch gefixt werden
 
 #include<stdio.h>
 #include<stdlib.h>

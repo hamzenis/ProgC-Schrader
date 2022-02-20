@@ -1,3 +1,2 @@
 # ProgC-Schrader
- Einführung in C bei Prof. Schrader - FRA UAS
- Challenges aus dem Skript
+ Einführung in C - Challenges aus dem Skript bei Prof. Schrader - FRA UAS

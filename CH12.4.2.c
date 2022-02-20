@@ -5,7 +5,7 @@
  * Author: Hamzenis Kryeziu
  * E-Mail: hamzenis.kryeziu@stud.fra-uas.de
  * -----
- * Last Modified: 2022-02-21, 12:19:38 am
+ * Last Modified: 2022-02-21, 12:56:16 am
  * Modified By: Hamzenis Kryeziu
  * -----
  * Copyright (c) 2022
@@ -19,6 +19,8 @@
  * 2022-02-01, 3:38:26 pm	H.K.	-start-
  */
 
+// nicht fertig
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -31,7 +33,6 @@ struct Data {
 };
 
 // Define structure of a node
-
 struct LinkedListNode {
     struct Data nodedata;
     
@@ -110,6 +111,11 @@ NodePointer addNodeEndOfList(NodePointer head,
     return head;
 }
 
+/*
+* Ein Node wird nach Datum sortiert in die Linked List hinzugefügt.
+* Nur wenn vorher mindestens ein Node vorhanden ist!
+* Wenn kein Node vorhanden ist addNodeEndOfList() verwenden
+*/
 NodePointer addNodeSort(NodePointer head,
     int year,
     int month,
@@ -118,8 +124,6 @@ NodePointer addNodeSort(NodePointer head,
     
 
     NodePointer ptrNewNode;
-
-
     NodePointer ptrNode;    
 
     ptrNewNode = createNode();  

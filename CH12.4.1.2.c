@@ -5,7 +5,7 @@
  * Author: Hamzenis Kryeziu
  * E-Mail: hamzenis.kryeziu@stud.fra-uas.de
  * -----
- * Last Modified: 2022-02-21, 12:19:42 am
+ * Last Modified: 2022-02-21, 12:42:05 am
  * Modified By: Hamzenis Kryeziu
  * -----
  * Copyright (c) 2022 
@@ -58,6 +58,7 @@ int main() {
 
     for (int i = 0; i < n; i++) {
         printf("\nEnter the details of student %d \n\n", i + 1);
+        
         // fflush(stdin) does not work for some compilers
         myFlushStdin();
 

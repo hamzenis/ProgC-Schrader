@@ -5,7 +5,7 @@
  * Author: Hamzenis Kryeziu
  * E-Mail: hamzenis.kryeziu@stud.fra-uas.de
  * -----
- * Last Modified: 2022-02-21, 1:06:39 am
+ * Last Modified: 2022-02-21, 1:36:19 pm
  * Modified By: Hamzenis Kryeziu
  * -----
  * Copyright (c) 2022
@@ -142,7 +142,10 @@ NodePointer addNodeSort(NodePointer head,
     */
 
     while (ptrNode->next != NULL) {
-        if (ptrNode->nodedata.year >= ptrNewNode->nodedata.year && ptrNode->nodedata.month >= ptrNewNode->nodedata.month && ptrNode->nodedata.day >= ptrNewNode->nodedata.day) {
+        if (ptrNode->nodedata.year >= ptrNewNode->nodedata.year && 
+            ptrNode->nodedata.month >= ptrNewNode->nodedata.month && 
+            ptrNode->nodedata.day >= ptrNewNode->nodedata.day) {
+                
             printf("TESTTESTTEST");
             break;
         }
@@ -180,9 +183,6 @@ void printList(NodePointer head) {
         ptrNode = ptrNode->next;
     }
 }
-
-
-
 
 int main() {
     

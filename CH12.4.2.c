@@ -5,7 +5,7 @@
  * Author: Hamzenis Kryeziu
  * E-Mail: hamzenis.kryeziu@stud.fra-uas.de
  * -----
- * Last Modified: 2022-02-21, 1:03:28 am
+ * Last Modified: 2022-02-21, 1:06:39 am
  * Modified By: Hamzenis Kryeziu
  * -----
  * Copyright (c) 2022
@@ -114,7 +114,7 @@ NodePointer addNodeEndOfList(NodePointer head,
 /*
 * Ein Node wird nach Datum sortiert in die Linked List hinzugefügt.
 * Nur wenn vorher mindestens ein Node vorhanden ist!
-* Wenn kein Node vorhanden ist addNodeEndOfList() verwenden
+* Wenn kein Node vorhanden ist addNodeEndOfList() verwenden.
 */
 NodePointer addNodeSort(NodePointer head,
     int year,
@@ -135,7 +135,10 @@ NodePointer addNodeSort(NodePointer head,
     ptrNode = head;
 
     /*
-    *
+    * Linked List wird nacheinander durch gegangen 
+    * und jeder Node wird verglichen mit dem hinzuzufügenden nach Datum
+    * bis er der lexikografisch nächste wäre.
+    * Die nachfolgenden Nodes werden nach dem hinzugefügt.
     */
 
     while (ptrNode->next != NULL) {

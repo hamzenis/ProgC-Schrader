@@ -5,7 +5,7 @@
  * Author: Hamzenis Kryeziu
  * E-Mail: hamzenis.kryeziu@stud.fra-uas.de
  * -----
- * Last Modified: 2022-02-21, 1:36:19 pm
+ * Last Modified: 2022-02-21, 1:48:21 pm
  * Modified By: Hamzenis Kryeziu
  * -----
  * Copyright (c) 2022
@@ -19,7 +19,7 @@
  * 2022-02-01, 3:38:26 pm	H.K.	-start-
  */
 
-// nicht fertig
+ // nicht fertig
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -35,22 +35,22 @@ struct Data {
 // Define structure of a node
 struct LinkedListNode {
     struct Data nodedata;
-    
+
     // pointer to next node in list
-    struct LinkedListNode* next;    
+    struct LinkedListNode* next;
 };
 
 /*
 * define NodePointer as a pointer to a node in the list
 * define NodePointer of data type struct LinkedList
 */
-typedef struct LinkedListNode* NodePointer; 
+typedef struct LinkedListNode* NodePointer;
 
 // creates a new empty node
 NodePointer createNode() {
-    
+
     // declare a node
-    NodePointer ptrNewNode;     
+    NodePointer ptrNewNode;
 
     // allocate memory for new node
     ptrNewNode = (NodePointer)malloc(sizeof(struct LinkedListNode));
@@ -74,7 +74,7 @@ NodePointer addNodeEndOfList(NodePointer head,
     char* event) {
 
     // pointer to newly created node
-    NodePointer ptrNewNode; 
+    NodePointer ptrNewNode;
     //used as pointer to nodes
     NodePointer ptrNode;
 
@@ -82,7 +82,7 @@ NodePointer addNodeEndOfList(NodePointer head,
     ptrNewNode = createNode();
 
     // fill with values
-    ptrNewNode->nodedata.year = year;    
+    ptrNewNode->nodedata.year = year;
     ptrNewNode->nodedata.month = month;
     ptrNewNode->nodedata.day = day;
     strcpy(ptrNewNode->nodedata.event, event);
@@ -102,11 +102,11 @@ NodePointer addNodeEndOfList(NodePointer head,
         while (ptrNode->next != NULL) {
             ptrNode = ptrNode->next;
         }
-        
+
         // Point the previous last node to the new node created.
         ptrNode->next = ptrNewNode;
     }
-    
+
     // return the address of first node
     return head;
 }
@@ -121,12 +121,12 @@ NodePointer addNodeSort(NodePointer head,
     int month,
     int day,
     char* event) {
-    
+
 
     NodePointer ptrNewNode;
-    NodePointer ptrNode;    
+    NodePointer ptrNode;
 
-    ptrNewNode = createNode();  
+    ptrNewNode = createNode();
     ptrNewNode->nodedata.year = year;
     ptrNewNode->nodedata.month = month;
     ptrNewNode->nodedata.day = day;
@@ -135,19 +135,19 @@ NodePointer addNodeSort(NodePointer head,
     ptrNode = head;
 
     /*
-    * Linked List wird nacheinander durch gegangen 
+    * Linked List wird nacheinander durch gegangen
     * und jeder Node wird verglichen mit dem hinzuzufügenden nach Datum
     * bis er der lexikografisch nächste wäre.
     * Die nachfolgenden Nodes werden nach dem hinzugefügt.
     */
-
     while (ptrNode->next != NULL) {
-        if (ptrNode->nodedata.year >= ptrNewNode->nodedata.year && 
-            ptrNode->nodedata.month >= ptrNewNode->nodedata.month && 
-            ptrNode->nodedata.day >= ptrNewNode->nodedata.day) {
-                
-            printf("TESTTESTTEST");
-            break;
+        if (ptrNode->nodedata.year >= ptrNewNode->nodedata.year) {
+            if (ptrNode->nodedata.month >= ptrNewNode->nodedata.month) {
+                if (ptrNode->nodedata.day >= ptrNewNode->nodedata.day) {
+                    printf("TESTTESTTEST");
+                    break;
+                }
+            }
         }
         ptrNode = ptrNode->next;
     }
@@ -171,21 +171,21 @@ void printList(NodePointer head) {
     NodePointer ptrNode;
     ptrNode = head;
     while (ptrNode != NULL) {
-        
+
         // print data of node
         printf("\n\%d-%02d-%02d - %s",
             ptrNode->nodedata.year,
             ptrNode->nodedata.month,
             ptrNode->nodedata.day,
             ptrNode->nodedata.event);
-            
+
         // traverse to next node
         ptrNode = ptrNode->next;
     }
 }
 
 int main() {
-    
+
     //pointer to first node of list
     NodePointer head = NULL;
 

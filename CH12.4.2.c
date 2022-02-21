@@ -5,7 +5,7 @@
  * Author: Hamzenis Kryeziu
  * E-Mail: hamzenis.kryeziu@stud.fra-uas.de
  * -----
- * Last Modified: 2022-02-21, 4:23:42 pm
+ * Last Modified: 2022-02-21, 5:38:04 pm
  * Modified By: Hamzenis Kryeziu
  * -----
  * Copyright (c) 2022
@@ -20,6 +20,7 @@
  * 2022-02-01, 3:38:26 pm	H.K.	-start-
  */
 
+// Noch nicht fertig!
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -144,9 +145,10 @@ NodePointer addNodeSort(NodePointer head,
 
     /*
     * Linked List wird nacheinander durch gegangen
-    * und jeder Node wird verglichen mit dem hinzuzufügenden nach Datum
-    * bis er der lexikografisch nächste wäre.
-    * Die nachfolgenden Nodes werden nach dem hinzugefügt.
+    * und jeder Node wird verglichen mit dem hinzuzufügenden Node
+    * nach Datum bis er der lexikografisch nächste wäre.
+    * Die nachfolgenden Nodes werden nach dem hinzugefügt und
+    * solange in der temporären Node temp zwischengespeichert.
     */
     NodePointer temp = ptrNode->next;
     while (ptrNode->next != NULL) {
@@ -174,8 +176,10 @@ NodePointer addNodeSort(NodePointer head,
     }
 
     /*
-    * Einfügen des neuen Nodes an seinen lexikographischen Platz
-    * 
+    * Einfügen des neuen Nodes an seinen lexikographischen Platz.
+    * Der nächste Node nach ptrNode wird der neu erstellte ptrNewNode und
+    * die restlichen Nodes der Linked List kommen nach ptrNewNode, 
+    * die in der teporären Node temp gespeichert sind.
     */
     ptrNode->next = ptrNewNode;
     ptrNewNode->next = temp;

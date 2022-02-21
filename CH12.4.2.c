@@ -5,7 +5,7 @@
  * Author: Hamzenis Kryeziu
  * E-Mail: hamzenis.kryeziu@stud.fra-uas.de
  * -----
- * Last Modified: 2022-02-21, 1:54:38 pm
+ * Last Modified: 2022-02-21, 4:03:36 pm
  * Modified By: Hamzenis Kryeziu
  * -----
  * Copyright (c) 2022
@@ -15,11 +15,11 @@
  * HISTORY:
  * Date              		By		Comments
  * ------------------		----	----------------------------------------------------------
+ * 2022-02-21, 4:03:31 pm	H.K.	Added Comments
  * 2022-02-20, 11:32:10 pm	H.K.	Neue Funktion addNoteSort()
  * 2022-02-01, 3:38:26 pm	H.K.	-start-
  */
 
- // nicht fertig
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -65,6 +65,15 @@ NodePointer createNode() {
     ptrNewNode->next = NULL;
     // return the address of the new node
     return ptrNewNode;
+}
+
+// Print Funktion eines einzelnen Nodes (Für Debug Zwecke)
+void printATest(NodePointer ptrNodeA) {
+    printf("\n\%d-%02d-%02d - %s",
+        ptrNodeA->nodedata.year,
+        ptrNodeA->nodedata.month,
+        ptrNodeA->nodedata.day,
+        ptrNodeA->nodedata.event);
 }
 
 NodePointer addNodeEndOfList(NodePointer head,
@@ -122,7 +131,6 @@ NodePointer addNodeSort(NodePointer head,
     int day,
     char* event) {
 
-
     NodePointer ptrNewNode;
     NodePointer ptrNode;
 
@@ -140,28 +148,37 @@ NodePointer addNodeSort(NodePointer head,
     * bis er der lexikografisch nächste wäre.
     * Die nachfolgenden Nodes werden nach dem hinzugefügt.
     */
+    NodePointer temp = ptrNode->next;
     while (ptrNode->next != NULL) {
+        //Der Node vorher muss größer sein, als ptrNewNode
         if (ptrNode->nodedata.year <= ptrNewNode->nodedata.year) {
             if (ptrNode->nodedata.month <= ptrNewNode->nodedata.month) {
                 if (ptrNode->nodedata.day <= ptrNewNode->nodedata.day) {
-                    printf("TESTTESTTEST");
-                    break;
+                    //Der Node nachher muss kleiner sein, als ptrNewNode
+                    if (temp->nodedata.year >= ptrNewNode->nodedata.year) {
+                        if (temp->nodedata.month >= ptrNewNode->nodedata.month) {
+                            if (temp->nodedata.day >= ptrNewNode->nodedata.day) {                                
+                                break;
+                            }
+                        }
+                    }
                 }
             }
         }
+        /*
+        * Falls die Bedingung nicht erfüllt wurden, 
+        * wird die nächste Stelle gesucht
+        */
+        temp = temp->next;
         ptrNode = ptrNode->next;
     }
 
-    NodePointer temp;
-    NodePointer temp2;
-
-    while (ptrNode->next != NULL) {
-        temp = ptrNode->next;
-        ptrNode->next = ptrNewNode;
-        ptrNode = ptrNode->next;
-        temp2 = ptrNode->next;
-        ptrNode->next = temp;
-    }
+    /*
+    * Einfügen des neuen Nodes an seinen lexikographischen Platz
+    * 
+    */
+    ptrNode->next = ptrNewNode;
+    ptrNewNode->next = temp;
 
     return head;
 
@@ -190,12 +207,14 @@ int main() {
     NodePointer head = NULL;
 
     head = addNodeEndOfList(NULL, 2022, 1, 1, "New Year");
-    addNodeEndOfList(head, 2022, 1, 11, "C Programming Lecture");
-    addNodeEndOfList(head, 2022, 1, 11, "C Programming Exercise");
-    addNodeEndOfList(head, 2022, 1, 13, "C Programming Exercise");
-    addNodeEndOfList(head, 2022, 1, 10, "Restart of Lectures");
+    addNodeEndOfList(head, 2022, 1, 18, "C Programming Lecture");
+    addNodeEndOfList(head, 2022, 1, 20, "C Programming Exercise");
+    addNodeEndOfList(head, 2022, 1, 25, "C Programming Exercise");
+    addNodeEndOfList(head, 2022, 1, 28, "Restart of Lectures");
 
-    addNodeSort(head, 2022, 1, 12, "CTEST");
+    addNodeSort(head, 2022, 1, 23, "CTEST");
+
+    printf("\n\n\n\n\n");
 
     printList(head);
 }

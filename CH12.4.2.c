@@ -5,7 +5,7 @@
  * Author: Hamzenis Kryeziu
  * E-Mail: hamzenis.kryeziu@stud.fra-uas.de
  * -----
- * Last Modified: 2022-02-21, 4:03:36 pm
+ * Last Modified: 2022-02-21, 4:23:42 pm
  * Modified By: Hamzenis Kryeziu
  * -----
  * Copyright (c) 2022
@@ -150,11 +150,11 @@ NodePointer addNodeSort(NodePointer head,
     */
     NodePointer temp = ptrNode->next;
     while (ptrNode->next != NULL) {
-        //Der Node vorher muss größer sein, als ptrNewNode
+        // Der Node vorher muss größer sein, als ptrNewNode
         if (ptrNode->nodedata.year <= ptrNewNode->nodedata.year) {
             if (ptrNode->nodedata.month <= ptrNewNode->nodedata.month) {
                 if (ptrNode->nodedata.day <= ptrNewNode->nodedata.day) {
-                    //Der Node nachher muss kleiner sein, als ptrNewNode
+                    // Der Node nachher muss kleiner sein, als ptrNewNode
                     if (temp->nodedata.year >= ptrNewNode->nodedata.year) {
                         if (temp->nodedata.month >= ptrNewNode->nodedata.month) {
                             if (temp->nodedata.day >= ptrNewNode->nodedata.day) {                                
@@ -208,13 +208,16 @@ int main() {
 
     head = addNodeEndOfList(NULL, 2022, 1, 1, "New Year");
     addNodeEndOfList(head, 2022, 1, 18, "C Programming Lecture");
-    addNodeEndOfList(head, 2022, 1, 20, "C Programming Exercise");
-    addNodeEndOfList(head, 2022, 1, 25, "C Programming Exercise");
-    addNodeEndOfList(head, 2022, 1, 28, "Restart of Lectures");
+    addNodeEndOfList(head, 2022, 3, 20, "C Programming Exercise");
+    addNodeEndOfList(head, 2022, 4, 25, "C Programming Exercise");
+    addNodeEndOfList(head, 2022, 8, 28, "Restart of Lectures");
+    addNodeEndOfList(head, 2022, 9, 4, "CTest2");
 
     addNodeSort(head, 2022, 1, 23, "CTEST");
+    
+    
 
-    printf("\n\n\n\n\n");
+    addNodeSort(head, 2022, 5, 2, "Debug");
 
     printList(head);
 }

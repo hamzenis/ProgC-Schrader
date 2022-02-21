@@ -5,7 +5,7 @@
  * Author: Hamzenis Kryeziu
  * E-Mail: hamzenis.kryeziu@stud.fra-uas.de
  * -----
- * Last Modified: 2022-02-20, 7:09:21 pm
+ * Last Modified: 2022-02-21, 1:17:08 am
  * Modified By: Hamzenis Kryeziu
  * -----
  * Copyright (c) 2022 
@@ -15,7 +15,7 @@
  * HISTORY:
  * Date              		By		Comments
  * ------------------		----	----------------------------------------------------------
- * 2022-02-20, 7:09:17 pm	H.K.	-start-
+ * 2022-01-11, 4:05:05 pm	H.K.	-start-
  */
 
 #include <stdio.h>
@@ -24,11 +24,6 @@
 //Noch nicht begonnen
 
 int main() {
-
-    if (1) {
-        exit(1);
-    }
-
 
 
     return 0;

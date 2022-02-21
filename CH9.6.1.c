@@ -5,18 +5,19 @@
  * Author: Hamzenis Kryeziu
  * E-Mail: hamzenis.kryeziu@stud.fra-uas.de
  * -----
- * Last Modified: 2022-02-20, 7:10:40 pm
+ * Last Modified: 2022-02-21, 1:18:07 am
  * Modified By: Hamzenis Kryeziu
  * -----
- * Copyright (c) 2022
- *
+ * Copyright (c) 2022 
+ * 
  * Free for use
  * -----
  * HISTORY:
  * Date              		By		Comments
  * ------------------		----	----------------------------------------------------------
- * 2022-02-20, 7:10:20 pm	H.K.	-start-
+ * 2022-01-25, 2:41:19 am	H.K.	-start-
  */
+
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -29,6 +30,7 @@ int main() {
 
     printf("%s\n", sAufgabenString);
 
+    //Mit klassischer toupper() Methode
     for (int i = 0; i <= strlen(sAufgabenString); i++) {
         sAufgabenString[i] = toupper(sAufgabenString[i]);
     }

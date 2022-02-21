@@ -5,7 +5,7 @@
  * Author: Hamzenis Kryeziu
  * E-Mail: hamzenis.kryeziu@stud.fra-uas.de
  * -----
- * Last Modified: 2022-02-20, 7:13:01 pm
+ * Last Modified: 2022-02-21, 1:20:07 am
  * Modified By: Hamzenis Kryeziu
  * -----
  * Copyright (c) 2022 
@@ -28,7 +28,7 @@
 #define MAX 800
 
 /*
-* ASCII  Values werden von kleinenen Buchstaben (Dez. Zahlen zw. 97 und 122) 
+* ASCII  Values werden von kleinen Buchstaben (Dez. Zahlen zw. 97 und 122) 
 * um 32 verringert um zu den großen Buchstaben (Dez. Zahlen zw. 65 und 90) zu kommen
 */
 void myToUpper(char* p1) {

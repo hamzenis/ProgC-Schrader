@@ -5,7 +5,7 @@
  * Author: Hamzenis Kryeziu
  * E-Mail: hamzenis.kryeziu@stud.fra-uas.de
  * -----
- * Last Modified: 2022-02-21, 7:55:49 pm
+ * Last Modified: 2022-02-22, 7:18:35 pm
  * Modified By: Hamzenis Kryeziu
  * -----
  * Copyright (c) 2022
@@ -129,6 +129,7 @@ NodePointer addNodeEndOfList(NodePointer head,
 *  1, wenn das NewNode nach dem Node kommen muss und vor dem temp.
 *  0, wenn es weiter gezählt werden muss, weil das Datum(ptrNewNode)
 *     auch nach dem nächsten Node in temp kommt.
+* (Noch nicht final)
 */
 int compareDate(NodePointer ptrNode,
     NodePointer ptrNewNode,

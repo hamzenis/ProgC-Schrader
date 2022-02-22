@@ -5,7 +5,7 @@
  * Author: Hamzenis Kryeziu
  * E-Mail: hamzenis.kryeziu@stud.fra-uas.de
  * -----
- * Last Modified: 2022-02-21, 5:38:04 pm
+ * Last Modified: 2022-02-21, 7:55:49 pm
  * Modified By: Hamzenis Kryeziu
  * -----
  * Copyright (c) 2022
@@ -20,7 +20,7 @@
  * 2022-02-01, 3:38:26 pm	H.K.	-start-
  */
 
-// Noch nicht fertig!
+ // Noch nicht fertig!
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -122,6 +122,40 @@ NodePointer addNodeEndOfList(NodePointer head,
 }
 
 /*
+* Eine Funktion mit der das Datum vergleichen wird von
+* drei Argumenten:
+* der jetzige Node ptrNode, der neue Node ptrNewNode und den folgenden Nodes temp.
+* Es wird 0 oder 1 zurückgegeben.
+*  1, wenn das NewNode nach dem Node kommen muss und vor dem temp.
+*  0, wenn es weiter gezählt werden muss, weil das Datum(ptrNewNode)
+*     auch nach dem nächsten Node in temp kommt.
+*/
+int compareDate(NodePointer ptrNode,
+    NodePointer ptrNewNode,
+    NodePointer temp) {
+
+    /*
+    * Das Datum wird in ein int konvertiert,
+    * jedoch damit die Struktur des Datums beibehalten wird,
+    * wird ein Faktor dazu multipliziert und alles zusammen addiert.
+    */
+    int iSum = (ptrNode->nodedata.year * 10000) + (ptrNode->nodedata.month * 100) + ptrNode->nodedata.day;
+    int iSumNew = (ptrNewNode->nodedata.year * 10000) + (ptrNewNode->nodedata.month * 100) + ptrNewNode->nodedata.day;
+    int iSumTemp = (temp->nodedata.year * 10000) + (temp->nodedata.month * 100) + temp->nodedata.day;
+
+    if (iSum == iSumNew) {
+        return 1;
+    }
+    else if (iSum < iSumNew && iSumNew > iSumTemp) {
+        return 1;
+    }
+    // else if (iSum < iSumNew && iSumNew < iSumTemp) {
+    //     return 0;
+    // }
+    return 0;
+}
+
+/*
 * Ein Node wird nach Datum sortiert in die Linked List hinzugefügt.
 * Nur wenn vorher mindestens ein Node vorhanden ist!
 * Wenn kein Node vorhanden ist addNodeEndOfList() verwenden.
@@ -134,6 +168,8 @@ NodePointer addNodeSort(NodePointer head,
 
     NodePointer ptrNewNode;
     NodePointer ptrNode;
+
+    int iSum, iSumNew, iSumTemp;
 
     ptrNewNode = createNode();
     ptrNewNode->nodedata.year = year;
@@ -152,24 +188,24 @@ NodePointer addNodeSort(NodePointer head,
     */
     NodePointer temp = ptrNode->next;
     while (ptrNode->next != NULL) {
-        // Der Node vorher muss größer sein, als ptrNewNode
-        if (ptrNode->nodedata.year <= ptrNewNode->nodedata.year) {
-            if (ptrNode->nodedata.month <= ptrNewNode->nodedata.month) {
-                if (ptrNode->nodedata.day <= ptrNewNode->nodedata.day) {
-                    // Der Node nachher muss kleiner sein, als ptrNewNode
-                    if (temp->nodedata.year >= ptrNewNode->nodedata.year) {
-                        if (temp->nodedata.month >= ptrNewNode->nodedata.month) {
-                            if (temp->nodedata.day >= ptrNewNode->nodedata.day) {                                
-                                break;
-                            }
-                        }
-                    }
-                }
-            }
+        iSum = (ptrNode->nodedata.year * 10000) + (ptrNode->nodedata.month * 100) + ptrNode->nodedata.day;
+        iSumNew = (ptrNewNode->nodedata.year * 10000) + (ptrNewNode->nodedata.month * 100) + ptrNewNode->nodedata.day;
+        iSumTemp = (temp->nodedata.year * 10000) + (temp->nodedata.month * 100) + temp->nodedata.day;
+        printf("%d %d %d\n",iSum,iSumNew,iSumTemp);
+        
+        if (iSum == iSumNew) {
+            break;
         }
+        else if (iSum < iSumNew && iSumNew > iSumTemp) {
+            break;
+        }
+
+        // if (compareDate(ptrNode, ptrNewNode, temp) == 1) {
+        //     break;
+        // }
         /*
-        * Falls die Bedingung nicht erfüllt wurden, 
-        * wird die nächste Stelle gesucht
+        * Falls die Bedingung nicht erfüllt wurde,
+        * wird die nächste Stelle initiert.
         */
         temp = temp->next;
         ptrNode = ptrNode->next;
@@ -178,14 +214,13 @@ NodePointer addNodeSort(NodePointer head,
     /*
     * Einfügen des neuen Nodes an seinen lexikographischen Platz.
     * Der nächste Node nach ptrNode wird der neu erstellte ptrNewNode und
-    * die restlichen Nodes der Linked List kommen nach ptrNewNode, 
+    * die restlichen Nodes der Linked List kommen nach ptrNewNode,
     * die in der teporären Node temp gespeichert sind.
     */
     ptrNode->next = ptrNewNode;
     ptrNewNode->next = temp;
 
     return head;
-
 }
 
 void printList(NodePointer head) {
@@ -218,10 +253,15 @@ int main() {
     addNodeEndOfList(head, 2022, 9, 4, "CTest2");
 
     addNodeSort(head, 2022, 1, 23, "CTEST");
-    
-    
+
 
     addNodeSort(head, 2022, 5, 2, "Debug");
+    addNodeSort(head, 2022, 10, 5, "Debug2");
+    addNodeSort(head, 2022, 6, 4, "Debug3");
+    addNodeSort(head, 2022, 11, 28, "Debug4");
+
+    addNodeSort(head, 2022, 9, 5, "Debug5");
+    addNodeSort(head, 2022, 9, 4, "Debug6");
 
     printList(head);
 }

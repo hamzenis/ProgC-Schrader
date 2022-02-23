@@ -5,11 +5,11 @@
  * Author: Hamzenis Kryeziu
  * E-Mail: hamzenis.kryeziu@stud.fra-uas.de
  * -----
- * Last Modified: 2022-02-21, 1:17:08 am
+ * Last Modified: 2022-02-23, 1:14:30 pm
  * Modified By: Hamzenis Kryeziu
  * -----
- * Copyright (c) 2022 
- * 
+ * Copyright (c) 2022
+ *
  * Free for use
  * -----
  * HISTORY:
@@ -21,11 +21,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//Noch nicht begonnen
+// Noch nicht begonnen
 
 int main() {
 
 
     return 0;
-
 }

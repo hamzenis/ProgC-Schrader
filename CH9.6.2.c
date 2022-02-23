@@ -5,7 +5,7 @@
  * Author: Hamzenis Kryeziu
  * E-Mail: hamzenis.kryeziu@stud.fra-uas.de
  * -----
- * Last Modified: 2022-02-23, 1:20:25 pm
+ * Last Modified: 2022-02-23, 11:26:02 pm
  * Modified By: Hamzenis Kryeziu
  * -----
  * Copyright (c) 2022 
@@ -58,7 +58,6 @@ int main() {
     ptrString = sEingabenString;
     myToUpper(ptrString);
     printf("%s\n", ptrString);
-
 
     return 0;
 }

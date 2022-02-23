@@ -5,7 +5,7 @@
  * Author: Hamzenis Kryeziu
  * E-Mail: hamzenis.kryeziu@stud.fra-uas.de
  * -----
- * Last Modified: 2022-02-23, 11:23:15 am
+ * Last Modified: 2022-02-23, 11:26:25 am
  * Modified By: Hamzenis Kryeziu
  * -----
  * Copyright (c) 2022
@@ -219,17 +219,14 @@ int main() {
     addNodeEndOfList(head, 2022, 9, 4, "CTest2");
 
     addNodeSort(head, 2022, 1, 23, "CTEST");
-
     addNodeSort(head, 2022, 5, 2, "Debug");
     addNodeSort(head, 2022, 10, 5, "Debug2");
     addNodeSort(head, 2022, 6, 4, "Debug3");
     addNodeSort(head, 2022, 11, 28, "Debug4");
-
     addNodeSort(head, 2022, 9, 5, "Debug5");
     addNodeSort(head, 2022, 9, 4, "Debug6");
     addNodeSort(head, 2022, 2, 1, "NeuerTest");
     addNodeSort(head, 2022, 12, 12, "NeuerTestEnd");
-
-
+    
     printList(head);
 }

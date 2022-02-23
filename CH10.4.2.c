@@ -5,7 +5,7 @@
  * Author: Hamzenis Kryeziu
  * E-Mail: hamzenis.kryeziu@stud.fra-uas.de
  * -----
- * Last Modified: 2022-02-20, 7:19:06 pm
+ * Last Modified: 2022-02-23, 1:53:14 pm
  * Modified By: Hamzenis Kryeziu
  * -----
  * Copyright (c) 2022
@@ -15,9 +15,9 @@
  * HISTORY:
  * Date              		By		Comments
  * ------------------		----	----------------------------------------------------------
+ * 2022-02-23, 1:52:35 pm	H.K.	added comments
  * 2022-01-11, 5:12:07 pm	H.K.	-start-
  */
-
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -28,23 +28,21 @@ int main() {
     char* pName;
     int iCnt;
     pName = (char*)calloc(100, sizeof(char));
-
     printf("\nGeben Sie Ihren Namen ein: ");
 
-    /* alter Code nur für einen Namen
+    /* 
+    *  alter Code für nur einen Namen
+    */    
+    // scanf("%s", pName);
+    // for (int i = 0; i < 100; i++) {
+    //     pName++;
+    //     iCnt++;
+    //     if (*pName == 0) break;
+    // }
 
-            scanf("%s", pName);
-            for (int i = 0; i < 100; i++) {
-                    pName++;
-                    iCnt++;
-                    if(*pName == 0) break;
-            }
-
-     */
-
-     /*
-     * Mit Vor- und Nachname möglich.
-     */
+    /*
+    *  Mit Vor- und Nachname möglich.
+    */
     fgets(pName, 100, stdin);
     for (int i = 0; i < 100; i++) {
         if (*pName == 0) {
@@ -58,11 +56,13 @@ int main() {
         }
     }
 
-    //Weil der Endcharakter(Zeilenumbruch\n) von fgets mitgezählt wird, ein schneller bugfix.
+    /*
+    *  Weil der Endcharakter(Zeilenumbruch\n) von fgets mitgezählt wird, 
+    *  ein schneller bugfix.
+    */
     iCnt--;
 
     printf("Die Länge Ihres Names ist : %d\n", iCnt);
-
 
     return 0;
 }

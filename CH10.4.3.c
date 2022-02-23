@@ -5,7 +5,7 @@
  * Author: Hamzenis Kryeziu
  * E-Mail: hamzenis.kryeziu@stud.fra-uas.de
  * -----
- * Last Modified: 2022-02-20, 7:25:09 pm
+ * Last Modified: 2022-02-23, 2:14:25 pm
  * Modified By: Hamzenis Kryeziu
  * -----
  * Copyright (c) 2022
@@ -42,15 +42,13 @@ int main() {
     int iZaehler1 = 0;
     int iZaehler2 = 0;
 
-
     printf("Ihren 1.String eingeben: ");
     scanf("%s", pString1);
-
     printf("Ihren 2.String eingeben: ");
     scanf("%s", pString2);
 
     /*
-    * alter Code zum Zählen eines strings
+    * alter Code zum Zählen eines Strings
     *
     * while (pString1[iZaehler1] != 0) {
     *     iZaehler1++;
@@ -60,7 +58,7 @@ int main() {
     * }
     */
 
-    //Neue Code zum zählen eines Strings
+    // Neuer Code zum zählen eines Strings
     iZaehler1 = strlen(pString1);
     iZaehler2 = strlen(pString2);
 
@@ -70,7 +68,6 @@ int main() {
     pString1 = (char*)realloc(pString1, (iZaehler1 + iZaehler2) * sizeof(char));
 
     strcat(pString1, pString2);
-
     printf("Ihr zusammengesetzer Char Pointer: %s Größe: %lu\n", pString1, sizeof(pString1) * (iZaehler2 + iZaehler1));
 
 

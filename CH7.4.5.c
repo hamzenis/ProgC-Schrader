@@ -5,7 +5,7 @@
  * Author: Hamzenis Kryeziu
  * E-Mail: hamzenis.kryeziu@stud.fra-uas.de
  * -----
- * Last Modified: 2022-02-20, 7:34:53 pm
+ * Last Modified: 2022-02-23, 1:11:40 pm
  * Modified By: Hamzenis Kryeziu
  * -----
  * Copyright (c) 2022
@@ -15,6 +15,7 @@
  * HISTORY:
  * Date              		By		Comments
  * ------------------		----	----------------------------------------------------------
+ * 2022-02-23, 1:10:21 pm	H.K.	added comments
  * 2022-02-20, 6:57:33 pm	H.K.	-start-
  */
 
@@ -105,8 +106,8 @@ int verifySelection(int iSquare, int iPlayer) {
     int collum;
     
     /*
-    * Switch Case für die Eingabe des Nutzers.
-    * Die jeweilige Eingabe wird in row & collum übersetzt.
+    *  Switch Case für die Eingabe des Nutzers.
+    *  Die jeweilige Eingabe wird in row & collum übersetzt.
     */
     switch (iSquare) {
     case 9:

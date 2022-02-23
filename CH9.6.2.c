@@ -5,7 +5,7 @@
  * Author: Hamzenis Kryeziu
  * E-Mail: hamzenis.kryeziu@stud.fra-uas.de
  * -----
- * Last Modified: 2022-02-21, 1:20:07 am
+ * Last Modified: 2022-02-23, 1:20:25 pm
  * Modified By: Hamzenis Kryeziu
  * -----
  * Copyright (c) 2022 
@@ -15,8 +15,8 @@
  * HISTORY:
  * Date              		By		Comments
  * ------------------		----	----------------------------------------------------------
- * 2022-01-27, 1:17:36 am	H.K.	-end v2.0-
- * 2022-01-25, 1:58:48 am	H.K.	Erweiterung um selbst Text einzugeben
+ * 2022-02-23, 1:19:53 pm	H.K.	added comments
+ * 2022-01-25, 1:58:48 am	H.K.	Erweiterung um einen Text einzugeben
  * 2022-01-25, 1:50:51 am	H.K.	Code verkleinert
  * 2022-01-25, 12:04:36 am	H.K.	-start-
  */
@@ -28,8 +28,8 @@
 #define MAX 800
 
 /*
-* ASCII  Values werden von kleinen Buchstaben (Dez. Zahlen zw. 97 und 122) 
-* um 32 verringert um zu den großen Buchstaben (Dez. Zahlen zw. 65 und 90) zu kommen
+*  ASCII  Values werden von kleinen Buchstaben (Dez. Zahlen zw. 97 und 122) 
+*  um 32 verringert um zu den großen Buchstaben (Dez. Zahlen zw. 65 und 90) zu kommen
 */
 void myToUpper(char* p1) {
     while (*p1 != 0) {
@@ -52,7 +52,7 @@ int main() {
 
     printf("%s\n", ptrString);
 
-    //Erweiterung
+    // Erweiterung um einen Text einzugeben.
     printf("Geben Sie einen String ein: (Max. 100 Zeichen)\n");
     fgets(sEingabenString, MAX, stdin);
     ptrString = sEingabenString;

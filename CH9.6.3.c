@@ -5,11 +5,11 @@
  * Author: Hamzenis Kryeziu
  * E-Mail: hamzenis.kryeziu@stud.fra-uas.de
  * -----
- * Last Modified: 2022-02-20, 7:15:43 pm
+ * Last Modified: 2022-02-24, 1:34:52 am
  * Modified By: Hamzenis Kryeziu
  * -----
- * Copyright (c) 2022 
- * 
+ * Copyright (c) 2022
+ *
  * Free for use
  * -----
  * HISTORY:
@@ -23,11 +23,13 @@
 #include <string.h>
 #include <ctype.h>
 
-//nicht fertig
+#define MAX 10
 
 int main() {
 
-    char *ptrstrNamen = (char*) calloc(6, 8 * sizeof(char));
+    const char* ptrstrNamen[MAX];
+    int cmpVal;
+    char temp[MAX];
 
     ptrstrNamen[0] = "Peter";
     ptrstrNamen[1] = "Paul";
@@ -36,35 +38,19 @@ int main() {
     ptrstrNamen[4] = "Magic";
     ptrstrNamen[5] = "Dragon";
 
+    for (int i = 0; i < MAX; i++) {
+        cmpVal = strcmp(ptrstrNamen[i], ptrstrNamen[i + 1]);
+        if (cmpVal > 0) {
+            strcpy(temp, ptrstrNamen[i]);
+            ptrstrNamen[i + 1] = ptrstrNamen[i];
+            ptrstrNamen[i] = temp;
+        }
 
-    char temp[100];
-    int iComp;
+    }
 
-    //for
-    iComp = strcmp(ptrstrNamen[0], ptrstrNamen[1]);
-
-    //debug
-    printf("%d\n", iComp);
-    //debug
-    for (int i = 0; i < 6; i++) {
+    for (int i = 0; i < MAX; i++) {
         printf("%s\n", ptrstrNamen[i]);
     }
-
-
-
-    if (iComp > 0) {
-        ptrstrNamen[0] = *temp;
-        ptrstrNamen[0] = *ptrstrNamen[1];
-        ptrstrNamen[1] = *temp;
-    }
-
-    //debug
-    for (int i = 0; i < 6; i++) {
-        printf("%c\n", *ptrstrNamen[i]);
-    }
-
-
-
 
 
     return 0;

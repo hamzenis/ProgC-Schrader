@@ -5,7 +5,7 @@
  * Author: Hamzenis Kryeziu
  * E-Mail: hamzenis.kryeziu@stud.fra-uas.de
  * -----
- * Last Modified: 2022-02-21, 12:19:21 am
+ * Last Modified: 2022-02-24, 12:40:34 pm
  * Modified By: Hamzenis Kryeziu
  * -----
  * Copyright (c) 2022 
@@ -15,12 +15,15 @@
  * HISTORY:
  * Date              		By		Comments
  * ------------------		----	----------------------------------------------------------
+ * 2022-02-24, 12:40:23 pm	H.K.	added Comments
  * 2022-01-25, 4:20:36 pm	H.K.	-start-
  */
 
-//Liest aus Record.txt aus, jedoch nur alles in einer Zeile
-//Bug noch vorhanden, muss überarbeitet werden.
-
+/*
+*  Liest aus Record.txt aus, jedoch nur alles in einer Zeile
+*  Bug noch vorhanden, muss überarbeitet werden. Wenn der Nachname zu kurz/lang
+*  verschiebt sich die RollNo und Marks
+*/
 #include<stdio.h>
 #include<stdlib.h>
 

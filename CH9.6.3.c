@@ -5,7 +5,7 @@
  * Author: Hamzenis Kryeziu
  * E-Mail: hamzenis.kryeziu@stud.fra-uas.de
  * -----
- * Last Modified: 2022-02-25, 3:14:36 am
+ * Last Modified: 2022-02-25, 12:50:56 pm
  * Modified By: Hamzenis Kryeziu
  * -----
  * Copyright (c) 2022
@@ -44,7 +44,7 @@ void printArr(char ptrArrName[][MAX]) {
 int main() {
 
     // Ein Array of Strings zum speichern der Namen. 
-    char arrName[STRINGS][MAX] = { {"Peter"},
+    char arrName[STRINGS][MAX] = {      {"Peter"},
                                         {"Paul"},
                                         {"Mary"},
                                         {"Puff"},

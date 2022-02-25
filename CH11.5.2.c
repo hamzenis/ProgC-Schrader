@@ -5,16 +5,17 @@
  * Author: Hamzenis Kryeziu
  * E-Mail: hamzenis.kryeziu@stud.fra-uas.de
  * -----
- * Last Modified: 2022-02-20, 7:28:02 pm
+ * Last Modified: 2022-02-25, 4:19:05 pm
  * Modified By: Hamzenis Kryeziu
  * -----
- * Copyright (c) 2022 
- * 
+ * Copyright (c) 2022
+ *
  * Free for use
  * -----
  * HISTORY:
  * Date              		By		Comments
  * ------------------		----	----------------------------------------------------------
+ * 2022-02-25, 4:19:00 pm	H.K.	added comments
  * 2022-01-24, 4:47:16 pm	H.K.	cleaned variables
  * 2022-01-18, 4:31:37 pm	H.K.	-start-
  */
@@ -24,26 +25,30 @@
 
 int main() {
 
-        FILE* fp;
-        char str[80];
+    FILE* fp;
+    char str[80];
 
-        fp = fopen("name.dat", "a+");
+    fp = fopen("name.dat", "a+");
 
-        if (fp == NULL) {
-                printf("Error opening file\n");
-                exit(1);
-        }
+    // Wenn das öffnen der Datei fehlschlägt, wird das Programm beendet.
+    if (fp == NULL) {
+        printf("Error opening file\n");
+        exit(1);
+    }
 
-        //Position wird wieder an den Anfang gesetzt oder fopen () von a+ auf r setzen für den gleichen Effekt
-        fseek(fp, 0, SEEK_SET);
+    /*
+    *   Position des Seekers wird wieder an den Anfang der Datei gesetzt.
+    *   Es kann auch fopen() auf r gesetzt werden, 
+    *   dann muss fseek() nicht verwendet werden.
+    */
+    fseek(fp, 0, SEEK_SET);
 
-        while (fgets(str, 80, fp) != NULL) {
-                printf("%s\n", str);
+    while (fgets(str, 80, fp) != NULL) {
+        printf("%s\n", str);
+    }
 
-        }
+    // Schließen der Datei.
+    fclose(fp);
 
-        fclose(fp);
-
-
-        return 0;
+    return 0;
 }

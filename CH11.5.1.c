@@ -5,7 +5,7 @@
  * Author: Hamzenis Kryeziu
  * E-Mail: hamzenis.kryeziu@stud.fra-uas.de
  * -----
- * Last Modified: 2022-02-25, 4:09:24 pm
+ * Last Modified: 2022-02-25, 5:03:41 pm
  * Modified By: Hamzenis Kryeziu
  * -----
  * Copyright (c) 2022
@@ -47,7 +47,7 @@ int main() {
         scanf("%s", sVName);
         printf("Geben Sie den Nachnamen der %d.Person ein: \n", i + 1);
         scanf("%s", sNName);
-        fprintf(fp, "%s %s\n", sVName, sNName);
+        fprintf(fp, "\n%s %s", sVName, sNName);
     }
 
     // Schließen der Datei.

@@ -5,7 +5,7 @@
  * Author: Hamzenis Kryeziu
  * E-Mail: hamzenis.kryeziu@stud.fra-uas.de
  * -----
- * Last Modified: 2022-02-25, 4:19:05 pm
+ * Last Modified: 2022-02-25, 5:01:05 pm
  * Modified By: Hamzenis Kryeziu
  * -----
  * Copyright (c) 2022
@@ -43,6 +43,7 @@ int main() {
     */
     fseek(fp, 0, SEEK_SET);
 
+    // Ausgabe der Datei
     while (fgets(str, 80, fp) != NULL) {
         printf("%s\n", str);
     }

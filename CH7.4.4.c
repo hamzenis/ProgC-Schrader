@@ -5,7 +5,7 @@
  * Author: Hamzenis Kryeziu
  * E-Mail: hamzenis.kryeziu@stud.fra-uas.de
  * -----
- * Last Modified: 2022-02-25, 2:29:52 pm
+ * Last Modified: 2022-02-25, 3:37:46 pm
  * Modified By: Hamzenis Kryeziu
  * -----
  * Copyright (c) 2022
@@ -15,13 +15,14 @@
  * HISTORY:
  * Date              		By		Comments
  * ------------------		----	----------------------------------------------------------
+ * 2022-02-25, 3:36:58 pm	H.K.	added comments
  * 2022-02-25, 2:10:58 pm	H.K.	-start-
  */
 
 #include <stdio.h>
 
 // Variable zum Anpassen der Größe des Arrays
-#define MAX 10
+#define MAX 100
 
 void printArr(int arr[]) {
     for (int i = 0; i < MAX; i++) {
@@ -40,7 +41,6 @@ void summeBerechnen(int* arrI1, int* arrSum) {
 int main() {
 
     int i1[MAX];
-    //int temp = 0;
     int iSum[MAX];
 
     // For-Schleife zum befüllen des Arrays.

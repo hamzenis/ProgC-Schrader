@@ -5,7 +5,7 @@
  * Author: Hamzenis Kryeziu
  * E-Mail: hamzenis.kryeziu@stud.fra-uas.de
  * -----
- * Last Modified: 2022-02-24, 2:18:22 am
+ * Last Modified: 2022-02-25, 2:43:34 am
  * Modified By: Hamzenis Kryeziu
  * -----
  * Copyright (c) 2022
@@ -15,10 +15,11 @@
  * HISTORY:
  * Date              		By		Comments
  * ------------------		----	----------------------------------------------------------
+ * 2022-02-25, 2:25:27 am	H.K.	added comments
  * 2022-01-24, 2:08:17 am	H.K.	-start-
  */
 
-// noch nicht fertig
+ // noch nicht fertig
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -29,41 +30,60 @@
 #define STRINGS 6
 #define MAX 10
 
+/*
+*   Print Funktion.
+*   Beim übergeben eines Mutlidimensionalen Arrays müssen keine
+*   rows oder collums mitgegeben werden. Aus Konvetion übergibt man
+*   jedoch die collums.
+*/
+void printArr(char ptrArrName[][MAX]){
+    for (int i = 0; i < 6; i++) {
+        printf("Sort Namen:\t%d. %s\n", i + 1 , ptrArrName[i]);
+    }
+}
+
 int main() {
 
-    const char* ptrstrNamen[STRINGS];
+    // Ein Array of Strings zum speichern der Namen. 
+    char arrName[STRINGS][MAX] = {      {"Peter"},
+                                        {"Paul"},
+                                        {"Mary"},
+                                        {"Puff"},
+                                        {"Magic"},
+                                        {"Dragon"} };
     int cmpVal;
     char temp[MAX];
 
     /*
     *  Variable damit die Länge des Arrays errechnet. 
     */
-    int arrSize = sizeof(ptrstrNamen) / sizeof(ptrstrNamen[0]);
+    int arrSize = sizeof(arrName) / sizeof(arrName[0]);
 
-    // Variablen Values
-    ptrstrNamen[0] = "Peter";
-    ptrstrNamen[1] = "Paul";
-    ptrstrNamen[2] = "Mary";
-    ptrstrNamen[3] = "Puff";
-    ptrstrNamen[4] = "Magic";
-    ptrstrNamen[5] = "Dragon";
-  
-    // 
-    for (int i = 0; i < arrSize - 1; i++) {
-        cmpVal = strcmp(ptrstrNamen[i], ptrstrNamen[i + 1]);
-        printf("%d\n", cmpVal);
-        if (cmpVal > 0) {
-            strcpy(temp, ptrstrNamen[i+1]);
-            ptrstrNamen[i + 1] = ptrstrNamen[i];
-            ptrstrNamen[i] = temp;
+    /*
+    *  Verschachtelte For-Schleife. 
+    *  Zur Visalisierung des Sortierprozesses wird
+    *  cmpVal & die Reihenfolge der jetztigen Namen bei jedem 
+    *  Vergleich geprintet. Damit sieht man das sortieren und 
+    *  den Stand der Namen.
+    */
+    for (int  i= 0; i < 6 - 1; i++) { 
+        printf("\ni: %d", i+1);
+
+        for (int j = 0; j < 6 - 1; j++) {
+            cmpVal = strcmp(arrName[j], arrName[j + 1]);
+            printf("\t\tj: %d. %d\n", j+1, cmpVal);
+            
+            if (cmpVal > 0) {
+                strcpy(temp, arrName[j + 1]);
+                strcpy(arrName[j + 1], arrName[j]);
+                strcpy(arrName[j], temp);
+            }
         }
+        
     }
 
-    // Print Funktion
-    for (int i = 0; i < arrSize; i++) {
-        printf("%d.%s\n", i+1, ptrstrNamen[i]);
-
-    }
-
+    printf("\n");
+    printArr(arrName);
+    
     return 0;
 }

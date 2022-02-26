@@ -1,38 +1,28 @@
 /*
- * File: CH3.10.1.c
- * Project: Einführung in C - Schrader
- * Created Date: 2022-02-26, 3:37:54 pm
- * Author: Jakob Hermanowski
- * -----
- * Last Modified: 2022-02-26, 3:39:59 pm
- * Modified By: Hamzenis Kryeziu
- * -----
- * Copyright (c) 2022 
- * 
- * Free for use
- * -----
- * HISTORY:
- * Date              		By		Comments
- * ------------------		----	----------------------------------------------------------
- * 2022-02-26, 3:37:54 pm	J.H.	-start-
- */
+3.10.1. Umsatzberechnung
+Schreiben Sie ein Programm, das den Anwender auffordert, die Anzahl und den Preis
+einer verkauften Ware einzugeben, um dann den Umsatz nach der Formel:
+fTotalUmsatz = fPreis * iAnzahl
+zu berechnen, und anschlieenden den damit erzielten Umsatz auszugeben.
+*/
+#include <stdio.h>
 
-#include<stdio.h>
+float umsatz(int* anzahl, float* preis)
+{
+    return (*preis)*(*anzahl);
+}
 
 int main()
 {
-	//variablen erstellen
-	int iAnzahl;
-	float fTotalUmsatz, fPreis;
-	
-	//werte abfragen
-	printf("Bitte den Einzelpreis angeben: ");
-	scanf("%f",&fPreis);
-	printf("Bitte die Menge angeben: ");
-	scanf("%i",&iAnzahl);
+    int   anzahl= 0;
+    float preis = 0.0;
 
-	//Umsatz ausgeben
-	printf("/n Umsatz:%.2f€",iAnzahl*fPreis);
+    printf("--Umsatzrechner--\n");
+    printf("Geben Sie Anzahl ihrer Ware und den Preis in Format \"anzahl preis\" an.\n");
+    scanf("%d %f", &anzahl, &preis);
 
-	return 0;
+    printf("Erzielter Umsatz: %.2f €\n", umsatz(&anzahl, &preis));
+
+
+    return 0;
 }

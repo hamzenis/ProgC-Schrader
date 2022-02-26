@@ -1,41 +1,42 @@
 /*
- * File: CH3.10.3.c
- * Project: Einführung in C - Schrader
- * Created Date: 2022-02-26, 3:37:54 pm
- * Author: Jakob Hermanowski
- * -----
- * Last Modified: 2022-02-26, 3:42:46 pm
- * Modified By: Hamzenis Kryeziu
- * -----
- * Copyright (c) 2022 
- * 
- * Free for use
- * -----
- * HISTORY:
- * Date              		By		Comments
- * ------------------		----	----------------------------------------------------------
- * 2022-02-26, 3:37:54 pm	H.K.	-start-
- */
+3.10.3. Body Mass Index
+Schreiben Sie ein Programm, dass zun¨achst das K¨orpergewicht und die Gr¨oe einer Person
+abfragt, um dann den Body Mass Index zu berechnen und auszugeben.
 
-#include<stdio.h>
+        Formel: Körpergewicht (in kg) geteilt durch Körpergröße (in m) zum Quadrat.
+*/
+#include <stdio.h>
+
+
+float bmi(float* gewicht,float* groesse)
+{
+    return (*gewicht)/( (*groesse)*(*groesse));
+}
 
 int main()
 {
-	//variablen erstellen
-	float fKg, fHeight, fBmi;
+    float gewicht, groesse, bmiwert;
 
-	//Werte einlesen
-	printf("Bitte Gewicht eingeben: ");
-	scanf("%f", &fKg);
-	printf("\nBitte Groeße eingeben: ");
-	scanf("%f", &fHeight);
-	
-	//bmi errechnen
-	fBmi = fKg/(2*fHeight);
+    printf("--BMI-Rechner--\n");
 
-	//Bmi ausgeben
-	printf("\nBMI: %f",fBmi);
+    printf("Gewicht(in kg) , Groesse eingeben(in m)\n");
 
-	return 0;
+    scanf("%f %f", &gewicht , &groesse);
+
+    bmiwert = bmi(&gewicht, &groesse);
+    printf("Ihr bmiwert: %.2f\n", bmiwert);
+
+    if(bmiwert >= 40)
+        printf("Adipositas Grad III\n");
+    else if(bmiwert >= 35)
+        printf("Adipositas Grad II\n");
+    else if(bmiwert >= 30)
+        printf("Adipositas Grad I\n");
+    else if(bmiwert >= 25)
+        printf("Übergewicht\n");
+    else if(bmiwert >= 18.5)
+        printf("Normalgewicht\n");
+    else
+        printf("Untergewicht");
+    return 0;
 }
-

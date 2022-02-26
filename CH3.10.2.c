@@ -1,5 +1,23 @@
-#include<stdio.h>
+/*
+ * File: CH3.10.2.c
+ * Project: Einführung in C - Schrader
+ * Created Date: 2022-02-26, 3:37:54 pm
+ * Author: Jakob Hermanowski
+ * -----
+ * Last Modified: 2022-02-26, 3:41:36 pm
+ * Modified By: Hamzenis Kryeziu
+ * -----
+ * Copyright (c) 2022 
+ * 
+ * Free for use
+ * -----
+ * HISTORY:
+ * Date              		By		Comments
+ * ------------------		----	----------------------------------------------------------
+ * 2022-02-26, 3:37:54 pm	J.H.	-start-
+ */
 
+#include<stdio.h>
 
 int main()
 {

@@ -5,11 +5,11 @@
  * Author: Hamzenis Kryeziu
  * E-Mail: hamzenis.kryeziu@stud.fra-uas.de
  * -----
- * Last Modified: 2022-02-21, 12:42:05 am
+ * Last Modified: 2022-02-25, 6:17:36 pm
  * Modified By: Hamzenis Kryeziu
  * -----
- * Copyright (c) 2022 
- * 
+ * Copyright (c) 2022
+ *
  * Free for use
  * -----
  * HISTORY:
@@ -18,7 +18,7 @@
  * 2022-01-25, 4:21:31 pm	H.K.	-start-
  */
 
-//Problem mit Zeilenumbruch. Muss noch gefixt werden
+ // Problem mit Zeilenumbruch. Muss noch gefixt werden
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -43,8 +43,9 @@ int main() {
 
     stud aStudent;
 
-    fp = fopen("records.txt", "w");
+    fp = fopen("records.txt", "a+");
 
+    // Wenn das öffnen der Datei fehlschlägt, wird das Programm beendet.
     if (fp == NULL) {
         printf("Error opening file\n");
         exit(1);
@@ -55,10 +56,9 @@ int main() {
     printf("Enter the number of records you want to enter: ");
     scanf("%d", &n);
 
-
     for (int i = 0; i < n; i++) {
         printf("\nEnter the details of student %d \n\n", i + 1);
-        
+
         // fflush(stdin) does not work for some compilers
         myFlushStdin();
 
@@ -75,6 +75,8 @@ int main() {
         printf("\n%d characters successfully written to the file\n\n", chars);
     }
 
+    // Schließen der Datei.
     fclose(fp);
+
     return 0;
 }

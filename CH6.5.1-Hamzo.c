@@ -1,11 +1,11 @@
 /*
- * File: CH6.5.1Bug.c
+ * File: CH6.5.1-Hamzo.c
  * Project: Einführung in C - Schrader
  * Created Date: 2022-02-28, 3:50:32 am
  * Author: Hamzenis Kryeziu & Ibrahim Hayber
  * E-Mail: hamzenis.kryeziu@stud.fra-uas.de
  * -----
- * Last Modified: 2022-02-28, 4:42:37 am
+ * Last Modified: 2022-02-28, 3:42:39 pm
  * Modified By: Hamzenis Kryeziu
  * -----
  * Copyright (c) 2022
@@ -176,5 +176,3 @@ int main() {
 
     return 0;
 }
-
-

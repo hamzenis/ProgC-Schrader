@@ -1,12 +1,32 @@
 /*
+ * File: CH4.4.2.c
+ * Project: Einführung in C - Schrader
+ * Created Date: 2022-02-26, 11:45:39 pm
+ * Author: Ibrahim Hayber
+ * -----
+ * Last Modified: 2022-02-28, 1:10:56 am
+ * Modified By: Hamzenis Kryeziu
+ * -----
+ * Copyright (c) 2022 
+ * 
+ * Free for use
+ * -----
+ * HISTORY:
+ * Date              		By		Comments
+ * ------------------		----	----------------------------------------------------------
+ * 2022-02-28, 1:03:21 am	H.K.	added comments
+ * 2022-02-26, 11:45:39 pm	I.H.	-start-
+ */
+
+/*
 4.4.2. Groß und Kleinbuchstaben
-Modifizieren Sie das Listing 4.1 so, dass sowohl Klein- als auch Grobuchstaben eingegeben
-werden d¨urfen und korrekt behandelt werden. Als weitere Eingabem¨oglichkeit
+Modifizieren Sie das Listing 4.1 so, dass sowohl Klein- als auch Grossbuchstaben eingegeben
+werden duerfen und korrekt behandelt werden. Als weitere Eingabemoeglichkeit
 soll ein q oder Q hinzukommen, dass das Programm beendet und den Fehlercode -1
-zur¨uckgibt. Die L¨osung soll dabei einmal mittels if ... then ...-Statements und einmal
-als switch ...-Statement ausgef¨uhrt werden.
-37
+zurueckgibt. Die Loesung soll dabei einmal mittels if ... then ...-Statements und einmal
+als switch ...-Statement ausgefuehrt werden.
 */
+
 #include <stdio.h>
 
 int main()

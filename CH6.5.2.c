@@ -1,11 +1,31 @@
 /*
+ * File: CH6.5.2.c
+ * Project: Einführung in C - Schrader
+ * Created Date: 2022-02-27, 5:29:28 pm
+ * Author: Ibrahim Hayber
+ * -----
+ * Last Modified: 2022-02-28, 1:42:24 am
+ * Modified By: Hamzenis Kryeziu
+ * -----
+ * Copyright (c) 2022 
+ * 
+ * Free for use
+ * -----
+ * HISTORY:
+ * Date              		By		Comments
+ * ------------------		----	----------------------------------------------------------
+ * 2022-02-28, 1:42:11 am	H.K.	added comments
+ * 2022-02-27, 5:29:28 pm	I.H.	-start-
+ */
+
+/*
 6.5.2. Geldwechselautomat
-Schreiben Sie ein Programm f¨ur einen Geldwechselautomat, der zun¨achst fragt, f¨ur welchen
+Schreiben Sie ein Programm fuer einen Geldwechselautomat, der zunaechst fragt, fuer welchen
 Betrag sie Wechselgeld haben wollen (z.B. 13.64 Euro)? Das Programm gibt ihnen
-dann aus, in welcher Form sie das Wechselgeld erhalten, wenn sie ingesamt m¨oglichst
-wenig M¨unzen oder Scheine haben wollen. In dem Beispiel von 13.64 Euro sind das:
-ein 10 Euroschein, eine 2 Eurom¨unze, eine 1 Eurom¨unze, eine 50 Centm¨unze, eine 10
-Centm¨unze und zwei 2 Centm¨unzen).
+dann aus, in welcher Form sie das Wechselgeld erhalten, wenn sie ingesamt moeglichst
+wenig Muenzen oder Scheine haben wollen. In dem Beispiel von 13.64 Euro sind das:
+ein 10 Euroschein, eine 2 Euromuenze, eine 1 Euromuenze, eine 50 Centmuenze, eine 10
+Centmuenze und zwei 2 Centmuenzen).
 */
 
 #include <stdio.h>

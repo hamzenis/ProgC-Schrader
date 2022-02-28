@@ -14,15 +14,16 @@
 * HISTORY:
 * Date              		By		Comments
 * ------------------		----	----------------------------------------------------------
+* 2022-02-28, 1:09:50 am	H.K.	added comments
 * 2022-02-26, 11:30:10 pm	I.H.	
 * 2022-02-26, 3:37:54 pm	J.H.	-start-
 */
 
 /*
 3.10.3. Body Mass Index
-Schreiben Sie ein Programm, dass zun¨achst das Koerpergewicht und die Groeße einer Person
+Schreiben Sie ein Programm, dass zunaechst das Koerpergewicht und die Groeße einer Person
 abfragt, um dann den Body Mass Index zu berechnen und auszugeben.
-Formel: Koerpergewicht (in kg) geteilt durch Körpergröße (in m) zum Quadrat.
+Formel: Koerpergewicht (in kg) geteilt durch Koerpergröße (in m) zum Quadrat.
 */
 
 #include <stdio.h>

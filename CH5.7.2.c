@@ -1,7 +1,27 @@
 /*
+ * File: CH5.7.2.c
+ * Project: Einführung in C - Schrader
+ * Created Date: 2022-02-26, 11:45:39 pm
+ * Author: Ibrahim Hayber
+ * -----
+ * Last Modified: 2022-02-28, 1:24:02 am
+ * Modified By: Hamzenis Kryeziu
+ * -----
+ * Copyright (c) 2022 
+ * 
+ * Free for use
+ * -----
+ * HISTORY:
+ * Date              		By		Comments
+ * ------------------		----	----------------------------------------------------------
+ * 2022-02-28, 1:20:32 am	H.K.	added comments
+ * 2022-02-26, 11:45:39 pm	I.H.	-start-
+ */
+
+/*
 5.7.2. Mathequiz
-Schreiben Sie ein Programm, das den Anwender zun¨achst fragt, wieviele Fragen der
-Form a * b = ? er beantworten m¨ochte. Das Programm sollte dem Anwender gratulieren,
+Schreiben Sie ein Programm, das den Anwender zunaechst fragt, wieviele Fragen der
+Form a * b = ? er beantworten moechte. Das Programm sollte dem Anwender gratulieren,
 wenn die Anwort korrekt ist, und ihm die korrekte Antwort zeigen, falls er falsch
 geantwortet hat. Das Programm merkt sich, wieviele Antworten insgesamt korrekt beantwortet
 wurden und zeigt ihm am Ende des Mathequiz sein Ergebnis.
@@ -10,7 +30,6 @@ wurden und zeigt ihm am Ende des Mathequiz sein Ergebnis.
 #include <stdlib.h>
 #include <time.h>
 #include <unistd.h>
-
 
 int main()
 {

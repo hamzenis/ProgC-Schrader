@@ -1,4 +1,24 @@
 /*
+ * File: CH2.2.2.c
+ * Project: Einführung in C - Schrader
+ * Created Date: 2022-02-26, 11:45:39 pm
+ * Author: Ibrahim Hayber
+ * -----
+ * Last Modified: 2022-02-28, 1:07:09 am
+ * Modified By: Hamzenis Kryeziu
+ * -----
+ * Copyright (c) 2022 
+ * 
+ * Free for use
+ * -----
+ * HISTORY:
+ * Date              		By		Comments
+ * ------------------		----	----------------------------------------------------------
+ * 2022-02-28, 12:58:33 am	H.K.	added comments
+ * 2022-02-26, 11:45:39 pm	I.H.	-start-
+ */
+
+/*
 2.2.2. Kalender
 Schreiben Sie ein Programm, dass den aktuellen Monat in dem untenstehenden Format
 ausgibt:
@@ -11,6 +31,7 @@ Oktober 2021
     25 26 27 28 29 30 31
     21
 */
+
 #include <stdio.h>
 
 int main()

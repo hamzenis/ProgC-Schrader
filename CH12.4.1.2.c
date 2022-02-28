@@ -5,7 +5,7 @@
  * Author: Hamzenis Kryeziu
  * E-Mail: hamzenis.kryeziu@stud.fra-uas.de
  * -----
- * Last Modified: 2022-03-01, 12:38:41 am
+ * Last Modified: 2022-03-01, 12:43:04 am
  * Modified By: Hamzenis Kryeziu
  * -----
  * Copyright (c) 2022
@@ -15,10 +15,9 @@
  * HISTORY:
  * Date              		By		Comments
  * ------------------		----	----------------------------------------------------------
+ * 2022-03-01, 12:42:30 am	H.K.	New Line Bug fixed
  * 2022-01-25, 4:21:31 pm	H.K.	-start-
  */
-
- // Problem mit Zeilenumbruch. Muss noch gefixt werden
 
 #include <stdio.h>
 #include <stdlib.h>

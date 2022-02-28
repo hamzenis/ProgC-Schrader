@@ -1,8 +1,29 @@
 /*
+ * File: CH8.6.3.c
+ * Project: Einführung in C - Schrader
+ * Created Date: 2022-02-28, 1:52:57 am
+ * Author: Ibrahim Hayber
+ * -----
+ * Last Modified: 2022-02-28, 1:55:34 am
+ * Modified By: Hamzenis Kryeziu
+ * -----
+ * Copyright (c) 2022 
+ * 
+ * Free for use
+ * -----
+ * HISTORY:
+ * Date              		By		Comments
+ * ------------------		----	----------------------------------------------------------
+ * 2022-02-28, 1:53:44 am	H.K.	added comments
+ * 2022-02-28, 1:52:57 am	I.H.	-start-
+ */
+
+/*
 8.6.3. Cryptogramm
 Modifizieren Sie das Programm so, dass ein Substitutionscode verwendet wird, bei dem
 jeder Buchstabe durch einen anderen ersetzt wird.
 */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>

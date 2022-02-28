@@ -5,7 +5,7 @@
  * Author: Hamzenis Kryeziu
  * E-Mail: hamzenis.kryeziu@stud.fra-uas.de
  * -----
- * Last Modified: 2022-02-25, 6:17:36 pm
+ * Last Modified: 2022-03-01, 12:38:41 am
  * Modified By: Hamzenis Kryeziu
  * -----
  * Copyright (c) 2022
@@ -20,8 +20,9 @@
 
  // Problem mit Zeilenumbruch. Muss noch gefixt werden
 
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 typedef struct student {
     char name[50];
@@ -29,6 +30,7 @@ typedef struct student {
     float marks;
 }stud;
 
+// fflush(stdin) does not work for some compilers
 int myFlushStdin() {
     int i;
     while (getchar() != '\n') {
@@ -37,10 +39,18 @@ int myFlushStdin() {
     return 0;
 }
 
+// Die NewLine am Ende von dem String stud.name wird entfernt.
+void removeNewLine(char* ptrName) {
+    for (int i = 0; i < strlen(ptrName); i++) {
+        if (ptrName[i] == '\n') {
+            ptrName[i] = 0;
+        }
+    }
+}
+
 int main() {
     FILE* fp;
     int n, chars;
-
     stud aStudent;
 
     fp = fopen("records.txt", "a+");
@@ -52,18 +62,17 @@ int main() {
     }
 
     printf("Testing fprintf() function: \n\n");
-
     printf("Enter the number of records you want to enter: ");
     scanf("%d", &n);
 
     for (int i = 0; i < n; i++) {
         printf("\nEnter the details of student %d \n\n", i + 1);
 
-        // fflush(stdin) does not work for some compilers
         myFlushStdin();
 
         printf("Enter name of the student: ");
         fgets(aStudent.name, 50, stdin);
+        removeNewLine(aStudent.name);
 
         printf("Enter roll no: ");
         scanf("%d", &aStudent.roll_no);

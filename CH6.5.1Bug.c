@@ -1,10 +1,11 @@
 /*
- * File: CH6.5.1.c
+ * File: CH6.5.1Bug.c
  * Project: Einführung in C - Schrader
- * Created Date: 2022-02-26, 11:45:39 pm
- * Author: Ibrahim Hayber
+ * Created Date: 2022-02-28, 3:50:32 am
+ * Author: Hamzenis Kryeziu
+ * E-Mail: hamzenis.kryeziu@stud.fra-uas.de
  * -----
- * Last Modified: 2022-02-28, 4:05:28 am
+ * Last Modified: 2022-02-28, 4:05:43 am
  * Modified By: Hamzenis Kryeziu
  * -----
  * Copyright (c) 2022
@@ -14,41 +15,24 @@
  * HISTORY:
  * Date              		By		Comments
  * ------------------		----	----------------------------------------------------------
- * 2022-02-28, 1:33:56 am	H.K.	added comments
- * 2022-02-26, 11:45:39 pm	I.H.	-start-
+ * 2022-02-28, 3:50:32 am	H.K.	-start-
  */
 
  /*
- 6.5.1. Konzentrationsspiel 2.0
- Schreiben Sie das Konzentrationsspiel aus der Challenge 5.7.3 so um, dass wiederverwendbare
- Funktionen etwa fuer das Loeschen des Bildschirms, das Warten, das Erzeugen
- von Zufallszahlen in einen vorgegeben Interval, fuer ein einzelnes Spiel (Ueberlegen Sie
- welche Argumente dafuer erforderlich sind?) definiert und genutzt werden.
+ *  6.5.1. Konzentrationsspiel 2.0
+ *  Schreiben Sie das Konzentrationsspiel aus der Challenge 5.7.3 so um,
+ *  dass wiederverwendbare Funktionen etwa fuer das Loeschen des Bildschirms,
+ *  das Warten, das Erzeugen von Zufallszahlen in einen vorgegeben Interval,
+ *  fuer ein einzelnes Spiel (Ueberlegen Sie welche Argumente dafuer
+ *  erforderlich sind?) definiert und genutzt werden.
  */
-
- // verbuggt
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
-void num_gen(int n) {
-    for (int i = 0; i < n; i++)
-        printf("%d ", (rand() % 100));
-}
-
-void waiting(int i) {
-    do {
-        iElapsedTime = time(NULL);
-    } while ((iElapsedTime - iCurrentTime) < i);
-}
-
-void clear() {
-    system("clear");
-}
-
 int main() {
-    // deklariere und initialisiere die Variablen
+    // Deklariere und initialisiere die Variablen
     char cYesNo = '\0';
     int iResp1 = 0;
     int iResp2 = 0;
@@ -72,6 +56,7 @@ int main() {
     // Frage, ob das Spiel gespielt werden soll
     printf("\nPlay a game of Concentration? (y or n): ");
     scanf("%c", &cYesNo);
+
     // Wenn ja, dann spiele es
     do {
         printf("Choose a level!\n\n");
@@ -80,23 +65,28 @@ int main() {
         printf("-3- High-Level\n");
         printf("-4- Quit Game\n");
         scanf("%d", &iMenu);
+
         switch (iMenu) {
             //EASY
             case 1:
-                // generiere drei Zufallszahlen
-                num_gen(3);
+                // Generiere drei Zufallszahlen
+                i1 = rand() % 100;
+                i2 = rand() % 100;
+                i3 = rand() % 100;
 
-                //zeige die Zahlen
+                // Zeige die Zahlen
                 printf("\nConcentrate on the next three numbers\n");
                 printf("\n%d\t%d\t%d\n", i1, i2, i3);
                 iCurrentTime = time(NULL);
-                // warte 3 Sekunden
-                waiting(3);
+                // Warte 3 Sekunden
+                do {
+                    iElapsedTime = time(NULL);
+                } while ((iElapsedTime - iCurrentTime) < 3);
 
-                // loesche den Bildschirm
-                clear();
+                // Loesche den Bildschirm
+                system("clear");
 
-                // frage nach den drei gezeigten Zahlen
+                // Frage nach den drei gezeigten Zahlen
                 printf("\nEnter each number separated by one space: ");
                 scanf("%d%d%d", &iResp1, &iResp2, &iResp3);
 
@@ -110,24 +100,30 @@ int main() {
 
                 //MID LEVEL
             case 2:
-                // Generiere fünf Zufallszahlen
-                num_gen(5);
+                // Generiere drei Zufallszahlen
+                i1 = rand() % 100;
+                i2 = rand() % 100;
+                i3 = rand() % 100;
+                i4 = rand() % 100;
+                i5 = rand() % 100;
 
                 // Zeige die Zahlen
                 printf("\nConcentrate on the next thre numbers\n");
                 printf("\n%d\t%d\t%d\t%d\t%d\n", i1, i2, i3, i4, i5);
                 iCurrentTime = time(NULL);
-                // Warte 5 Sekunden
-                waiting(5);
+                // Warte 3 Sekunden
+                do {
+                    iElapsedTime = time(NULL);
+                } while ((iElapsedTime - iCurrentTime) < 5);
 
                 // Loesche den Bildschirm
-                clear();
+                system("clear");
 
-                // Frage nach den fuenf gezeigten Zahlen
+                // Frage nach den drei gezeigten Zahlen
                 printf("\nEnter each number separated by one space: ");
                 scanf("%d%d%d%d%d", &iResp1, &iResp2, &iResp3, &iResp4, &iResp5);
 
-                // Sind dieses die fuenf Zufallszahlen?
+                // Sind dieses die drei Zufallszahlen?
                 if (i1 == iResp1 && i2 == iResp2 && i3 == iResp3 && i4 == iResp4 && i5 == iResp5)
                     printf("\nCongratulations!\n\n");
                 else
@@ -138,17 +134,23 @@ int main() {
                 //High Level
             case 3:
                 // Generiere drei Zufallszahlen
-                num_gen(5);
+                i1 = rand() % 100;
+                i2 = rand() % 100;
+                i3 = rand() % 100;
+                i4 = rand() % 100;
+                i5 = rand() % 100;
 
-                //zeige die Zahlen
+                // Zeige die Zahlen
                 printf("\nConcentrate on the next thre numbers\n");
                 printf("\n%d\t%d\t%d\t%d\t%d\n", i1, i2, i3, i4, i5);
                 iCurrentTime = time(NULL);
                 // Warte 3 Sekunden
-                waiting(3);
+                do {
+                    iElapsedTime = time(NULL);
+                } while ((iElapsedTime - iCurrentTime) < 3);
 
                 // Loesche den Bildschirm
-                clear();
+                system("clear");
 
                 // Frage nach den drei gezeigten Zahlen
                 printf("\nEnter each number separated by one space: ");
@@ -167,5 +169,10 @@ int main() {
         }
 
     } while (1);
+
     return 0;
-}
+
+
+
+
+

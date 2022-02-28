@@ -4,7 +4,7 @@
  * Created Date: 2022-02-26, 11:45:39 pm
  * Author: Ibrahim Hayber
  * -----
- * Last Modified: 2022-02-28, 3:05:26 am
+ * Last Modified: 2022-02-28, 11:38:25 pm
  * Modified By: Hamzenis Kryeziu
  * -----
  * Copyright (c) 2022
@@ -27,6 +27,7 @@
  als switch ...-Statement ausgefuehrt werden.
  */
 
+// Als If-Else Statement
 #include <stdio.h>
 
 int main() {

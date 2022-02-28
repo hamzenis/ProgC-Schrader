@@ -4,7 +4,7 @@
  * Created Date: 2022-02-26, 11:45:39 pm
  * Author: Ibrahim Hayber
  * -----
- * Last Modified: 2022-02-28, 1:25:21 am
+ * Last Modified: 2022-02-28, 11:40:31 pm
  * Modified By: Hamzenis Kryeziu
  * -----
  * Copyright (c) 2022
@@ -26,6 +26,9 @@
  zurueckgibt. Die Loesung soll dabei einmal mittels if ... then ...-Statements und einmal
  als switch ...-Statement ausgef¨uhrt werden.
  */
+
+// Als Switch Statement
+
 #include <stdio.h>
 
 int main() {

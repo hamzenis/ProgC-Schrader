@@ -4,11 +4,11 @@
  * Created Date: 2022-02-26, 11:45:39 pm
  * Author: Ibrahim Hayber
  * -----
- * Last Modified: 2022-02-28, 1:10:56 am
+ * Last Modified: 2022-02-28, 3:05:26 am
  * Modified By: Hamzenis Kryeziu
  * -----
- * Copyright (c) 2022 
- * 
+ * Copyright (c) 2022
+ *
  * Free for use
  * -----
  * HISTORY:
@@ -18,19 +18,18 @@
  * 2022-02-26, 11:45:39 pm	I.H.	-start-
  */
 
-/*
-4.4.2. Groß und Kleinbuchstaben
-Modifizieren Sie das Listing 4.1 so, dass sowohl Klein- als auch Grossbuchstaben eingegeben
-werden duerfen und korrekt behandelt werden. Als weitere Eingabemoeglichkeit
-soll ein q oder Q hinzukommen, dass das Programm beendet und den Fehlercode -1
-zurueckgibt. Die Loesung soll dabei einmal mittels if ... then ...-Statements und einmal
-als switch ...-Statement ausgefuehrt werden.
-*/
+ /*
+ 4.4.2. Groß und Kleinbuchstaben
+ Modifizieren Sie das Listing 4.1 so, dass sowohl Klein- als auch Grossbuchstaben eingegeben
+ werden duerfen und korrekt behandelt werden. Als weitere Eingabemoeglichkeit
+ soll ein q oder Q hinzukommen, dass das Programm beendet und den Fehlercode -1
+ zurueckgibt. Die Loesung soll dabei einmal mittels if ... then ...-Statements und einmal
+ als switch ...-Statement ausgefuehrt werden.
+ */
 
 #include <stdio.h>
 
-int main()
-{
+int main() {
     char cResponse = '\0';
     int iHealth = 0;
     int iError = 0;
@@ -42,25 +41,23 @@ int main()
     printf("\nEnter your  selection: ");
     scanf("%c", &cResponse);
 
-    if(cResponse =='a' || cResponse =='A')
-    {
+    if (cResponse == 'a' || cResponse == 'A') {
         printf("\nNow drinking  health potion\n");
         iHealth = iHealth + 1;
     }
-    else
-    {
-        if (cResponse == 'b' || cResponse == 'B')
+    else {
+        if (cResponse == 'b' || cResponse == 'B') {
             printf("\nNow resuming battle\n");
-        else if(cResponse == 'q' || cResponse == 'Q')
-        {
+        }
+        else if (cResponse == 'q' || cResponse == 'Q') {
             return -1;
         }
-        else
-        {
+        else {
             printf("\nError: Unvorhergesehene Eingabe!");
             iError = 1;
         }
         return iError;
     }
+    
     return 0;
 }

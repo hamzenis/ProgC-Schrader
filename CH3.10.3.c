@@ -58,5 +58,7 @@ int main()
         printf("Normalgewicht\n");
     else
         printf("Untergewicht");
+
+
     return 0;
 }

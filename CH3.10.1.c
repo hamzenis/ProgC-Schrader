@@ -15,7 +15,7 @@
 * Date              		By		Comments
 * ------------------		----	----------------------------------------------------------
 * 2022-02-28, 1:08:26 am	H.K.	added comments
-* 2022-02-26, 11:30:10 pm	I.H.	
+* 2022-02-26, 11:30:10 pm	I.H.
 * 2022-02-26, 3:37:54 pm	J.H.	-start-
 */
 
@@ -29,13 +29,11 @@ zu berechnen, und anschliessenden den damit erzielten Umsatz auszugeben.
 
 #include <stdio.h>
 
-float umsatz(int* anzahl, float* preis) 
-{
+float umsatz(int* anzahl, float* preis) {
     return (*preis) * (*anzahl);
 }
 
-int main() 
-{
+int main() {
     int anzahl = 0;
     float preis = 0.0;
 

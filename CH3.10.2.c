@@ -27,18 +27,15 @@ so dass in Folge auch der erzielte Gewinn ausgegeben werden kann.
 
 #include <stdio.h>
 
-float umsatz(int* anzahl, float* preis) 
-{
+float umsatz(int* anzahl, float* preis) {
     return (*preis) * (*anzahl);
 }
 
-float gewinn(int* anzahl, float* preis, float* verkaufspreis) 
-{
+float gewinn(int* anzahl, float* preis, float* verkaufspreis) {
     return ((*anzahl) * (*verkaufspreis)) - umsatz(anzahl, preis);
 }
 
-int main() 
-{
+int main() {
     int   anzahl = 0;
     float preis = 0.0;
     float verkaufspreis = 0.0;

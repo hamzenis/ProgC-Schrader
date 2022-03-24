@@ -5,7 +5,7 @@
  * Author: Hamzenis Kryeziu
  * E-Mail: hamzenis.kryeziu@stud.fra-uas.de
  * -----
- * Last Modified: 2022-03-22, 2:08:13 am
+ * Last Modified: 2022-03-24, 2:57:46 am
  * Modified By: Hamzenis Kryeziu
  * -----
  * Copyright (c) 2022
@@ -15,6 +15,8 @@
  * HISTORY:
  * Date              		By		Comments
  * ------------------		----	----------------------------------------------------------
+ * 2022-03-24, 2:56:41 am	H.K.	added comments
+ * 2022-03-24, 2:56:22 am	H.K.	added isPalin() function
  * 2022-03-22, 12:29:04 am	H.K.	-start-
 */
 
@@ -34,15 +36,24 @@ int isPalin(char* sString) {
     int sCount = 0;
     int hLange = sLange / 2;
 
+    /*
+    *   Für gerade Wörter.
+    */
     if (sLange % 2 == 0) {
         for (int i = 0; i < hLange; i++) {
-            if (sString[i] == sString[sLange - i]) {
+            if (sString[i] == sString[sLange - 1 - i]) {
                 sCount++;
             }
         }
         if (sCount == hLange) return 1;
     }
-    else {
+    /*
+    *   Für ungerade Wörter.
+    *   0 1 -2- 3 4
+    *   wenn 0==4 & 1==3, dann wird true ausgegeben,
+    *   die mittige Zahl 2 muss nicht überprüft werden.
+    */
+    else if (sLange % 2 == 1) {
         sLange--;
         for (int i = 0; i < hLange; i++) {
             if (sString[i] == sString[sLange - i]) {
@@ -54,15 +65,18 @@ int isPalin(char* sString) {
     return 0;
 }
 
+//Testwörter: Lagerregal, madam, racecar, Reittier
 int main() {
 
-    char* sEingabe = (char*)malloc(MAX * sizeof(char));
+    char* sEingabe = (char*) malloc(MAX * sizeof(char));
+    int iPalindrom;
 
-    printf("Geben Sie einen String ein: \n");
+    printf("Geben Sie einen String ein: ");
     scanf("%s", sEingabe);
 
-    int test = isPalin(sEingabe);
-    printf("%s %d %d %c\n", sEingabe, test, strlen(sEingabe), sEingabe[1]);
-
+    iPalindrom = isPalin(sEingabe);
+    if(iPalindrom == 1) printf("Das Eingebene Wort %s ist ein Palindrom\n", sEingabe);
+    if(iPalindrom == 0) printf("Das Eingebene Wort %s ist kein Palindrom\n", sEingabe);
+    
     return 0;
 }

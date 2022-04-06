@@ -5,7 +5,7 @@
  * Author: Hamzenis Kryeziu
  * E-Mail: hamzenis.kryeziu@stud.fra-uas.de
  * -----
- * Last Modified: 2022-04-06, 3:33:53 pm
+ * Last Modified: 2022-04-06, 3:39:04 pm
  * Modified By: Hamzenis Kryeziu
  * -----
  * Copyright (c) 2022
@@ -31,6 +31,7 @@
 
 /*
 *  return 1: Wenn das Wort ein Palindrom ist
+*  Funktioniert z.Z. nur mit Wörter und nicht mit Sätzen.
 */
 int isPalin(char* sString) {
     int sLange = strlen(sString);

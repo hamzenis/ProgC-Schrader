@@ -5,7 +5,7 @@
  * Author: Hamzenis Kryeziu
  * E-Mail: hamzenis.kryeziu@stud.fra-uas.de
  * -----
- * Last Modified: 2022-03-24, 2:57:46 am
+ * Last Modified: 2022-04-06, 3:33:53 pm
  * Modified By: Hamzenis Kryeziu
  * -----
  * Copyright (c) 2022
@@ -15,6 +15,7 @@
  * HISTORY:
  * Date              		By		Comments
  * ------------------		----	----------------------------------------------------------
+ * 2022-04-06, 3:32:39 pm	H.K.	fixed upper/lower case character problem
  * 2022-03-24, 2:56:41 am	H.K.	added comments
  * 2022-03-24, 2:56:22 am	H.K.	added isPalin() function
  * 2022-03-22, 12:29:04 am	H.K.	-start-
@@ -23,8 +24,8 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 #include <stdlib.h>
-//noch in Bearbeitung
 
 #define MAX 100
 
@@ -35,6 +36,13 @@ int isPalin(char* sString) {
     int sLange = strlen(sString);
     int sCount = 0;
     int hLange = sLange / 2;
+
+    /*
+    *   Eine For-Schleife damit das Wort in Kleinbuchstaben umgewandelt wird.
+    */
+    for (int i = 0; i < sLange; i++) {
+        sString[i] = tolower(sString[i]);
+    }
 
     /*
     *   Für gerade Wörter.
@@ -68,15 +76,15 @@ int isPalin(char* sString) {
 //Testwörter: Lagerregal, madam, racecar, Reittier
 int main() {
 
-    char* sEingabe = (char*) malloc(MAX * sizeof(char));
+    char* sEingabe = (char*)malloc(MAX * sizeof(char));
     int iPalindrom;
 
     printf("Geben Sie einen String ein: ");
     scanf("%s", sEingabe);
 
     iPalindrom = isPalin(sEingabe);
-    if(iPalindrom == 1) printf("Das Eingebene Wort %s ist ein Palindrom\n", sEingabe);
-    if(iPalindrom == 0) printf("Das Eingebene Wort %s ist kein Palindrom\n", sEingabe);
-    
+    if (iPalindrom == 1) printf("Das Eingebene Wort %s ist ein Palindrom\n", sEingabe);
+    if (iPalindrom == 0) printf("Das Eingebene Wort %s ist kein Palindrom\n", sEingabe);
+
     return 0;
 }

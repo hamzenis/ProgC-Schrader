@@ -5,7 +5,7 @@
  * Author: Hamzenis Kryeziu
  * E-Mail: hamzenis.kryeziu@stud.fra-uas.de
  * -----
- * Last Modified: 2022-04-06, 5:12:26 pm
+ * Last Modified: 2022-04-06, 5:22:07 pm
  * Modified By: Hamzenis Kryeziu
  * -----
  * Copyright (c) 2022
@@ -82,11 +82,11 @@ int main() {
 
     //  Printen
     for (int i = 0; i < MAX; i++) {
-        printf("%d. %f\n",i+1, arrFloats[i]);
+        printf("%d. %.1f\n",i+1, arrFloats[i]);
     }
-    printf("Der Mittelwert: %f\n", ermWert(arrFloats));
-    printf("Der kleinste Wert: %f\n", arrFloats[9]);
-    printf("Der groesste Wer: %f\n", arrFloats[0]);
+    printf("Der Mittelwert: %.2f\n", ermWert(arrFloats));
+    printf("Der kleinste Wert: %.1f\n", arrFloats[9]);
+    printf("Der groesste Wer: %.1f\n", arrFloats[0]);
 
     return 0;
 }
